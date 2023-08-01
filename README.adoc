@@ -1,0 +1,20 @@
+= Transpose Gherkin Data Table
+
+A simple command line tool to transpose a gherkin data table.
+The tool reads a data table from STDIN and prints the transposed data table to the STDOUT.
+
+1. Clone the respository.
+2. Run `./gradlew installDist`.
+This will install a distribution to the folder `build/install/transpose-gherkin-datatable` in the repository.
+3. Pass a Gherkin data table through the STDIN to the script  `build/install/transpose-gherkin-datatable/bin/transpose-gherkin-datatable`
+
+.Transposing a Gherkin data table from the clipboard
+====
+Given you copied a Gherkin data table to the clipboard.
+Then you can transpose that data table with the following command:
+
+[source,shell]
+----
+pbpaste | <repo-home>/build/install/transpose-gherkin-datatable/bin/transpose-gherkin-datatable
+----
+====
