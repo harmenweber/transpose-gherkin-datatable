@@ -11,6 +11,7 @@ repositories {
 }
 
 dependencies {
+    implementation("com.github.ajalt.clikt:clikt:4.2.0")
     testImplementation(kotlin("test"))
 }
 

@@ -6,7 +6,8 @@ The tool reads a data table from STDIN and prints the transposed data table to t
 1. Clone the respository.
 2. Run `./gradlew installDist`.
 This will install a distribution to the folder `build/install/transpose-gherkin-datatable` in the repository.
-3. Pass a Gherkin data table through the STDIN to the script  `build/install/transpose-gherkin-datatable/bin/transpose-gherkin-datatable`
+3. Pass a Gherkin data table through the STDIN to the script  `build/install/transpose-gherkin-datatable/bin/transpose-gherkin-datatable` to get the transposed data table on the STDOUT.
+4. As the full path to the script is rather cumbersome to write all the time, I suggest you create a symbolic link to the script somewhere on your PATH.
 
 .Transposing a Gherkin data table from the clipboard
 ====
