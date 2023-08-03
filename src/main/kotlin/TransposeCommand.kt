@@ -3,6 +3,7 @@ import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.parameters.options.flag
 import com.github.ajalt.clikt.parameters.options.help
 import com.github.ajalt.clikt.parameters.options.option
+import com.github.ajalt.mordant.terminal.Terminal
 import kotlin.system.exitProcess
 
 class TransposeCommand :
@@ -14,7 +15,7 @@ class TransposeCommand :
         try {
             read(System.`in`)
                 .transpose()
-                .print(System.out)
+                .print()
         } catch (throwable: Throwable) {
             print(throwable)
             exitProcess(1)
@@ -22,7 +23,9 @@ class TransposeCommand :
     }
 
     private fun print(throwable: Throwable) {
-        if (stacktrace) throwable.printStackTrace(System.err)
-        else System.err.println(throwable.message)
+        Terminal().also {
+            if (stacktrace) it.danger(message = throwable.stackTraceToString(), stderr = true)
+            else it.danger(message = throwable.message, stderr = true)
+        }
     }
 }

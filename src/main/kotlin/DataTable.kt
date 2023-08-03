@@ -1,7 +1,8 @@
+import com.github.ajalt.mordant.rendering.TextStyles.dim
+import com.github.ajalt.mordant.terminal.Terminal
 import java.io.BufferedReader
 import java.io.InputStream
 import java.io.InputStreamReader
-import java.io.PrintStream
 import java.util.regex.Pattern
 
 data class DataTable(val rows: List<List<String>>) {
@@ -39,12 +40,13 @@ data class DataTable(val rows: List<List<String>>) {
         return DataTable(transposedRows)
     }
 
-    fun print(printStream: PrintStream) {
+    fun print() {
+        val terminal = Terminal()
         val maxlengthPerColumn = getMaxlengthPerColumn()
         rows.map { row ->
             row.mapIndexed { index, cell -> cell.padEnd(maxlengthPerColumn[index]) }
-                .joinToString(" | ", "| ", " |")
-        }.forEach(printStream::println)
+                .joinToString(" ${dim("|")} ", "${dim("|")} ", " ${dim("|")}")
+        }.forEach(terminal::println)
     }
 
     private fun getMaxlengthPerColumn(): List<Int> {
