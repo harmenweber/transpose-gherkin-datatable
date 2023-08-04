@@ -18,6 +18,20 @@
       "origin"
     ]
   },
+  "releaseAssets": {
+    "tar": {
+      "description": "tar file",
+      "fileName": "transpose-gherkin-datatable-{{version}}.tar",
+      "path": "build/distributions/transpose-gherkin-datatable-{{version}}.tar",
+      "type": "application/x-tar"
+    },
+    "zip": {
+      "description": "zip file",
+      "fileName": "transpose-gherkin-datatable-{{version}}.zip",
+      "path": "build/distributions/transpose-gherkin-datatable-{{version}}.zip",
+      "type": "application/zip"
+    }
+  },
   "services": {
     "github": {
       "type": "GITHUB",
