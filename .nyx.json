@@ -44,5 +44,5 @@
   },
   "summaryFile": "build/.nyx-summary.txt",
   "stateFile": "build/.nyx-state.json",
-  "verbosity": "INFO"
+  "verbosity": "DEBUG"
 }
