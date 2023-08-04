@@ -13,6 +13,6 @@ plugins {
 rootProject.name = "transpose-gherkin-datatable"
 
 configure<com.mooltiverse.oss.nyx.gradle.NyxExtension> {
-    verbosity.set("INFO")
+    verbosity.set("DEBUG")
     dryRun.set(true)
 }
