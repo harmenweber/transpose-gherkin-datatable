@@ -1,0 +1,28 @@
+name: Release with Nyx GitHub Action
+
+on: workflow_dispatch
+# Avoid running multiple pipelines concurrently to avoid overlapping releases and tags
+concurrency:
+  group: project
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    needs: infer-version
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Nyx publish
+        id: nyx
+        uses: mooltiverse/nyx-github-action@main
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          command: 'publish'
+          preset: 'simple'
+          changelogPath: 'CHANGELOG.md'
+          dryRun: 'true'
