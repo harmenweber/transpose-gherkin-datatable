@@ -14,5 +14,5 @@ rootProject.name = "transpose-gherkin-datatable"
 
 configure<com.mooltiverse.oss.nyx.gradle.NyxExtension> {
     verbosity.set("DEBUG")
-    dryRun.set(true)
+    dryRun.set(false)
 }
