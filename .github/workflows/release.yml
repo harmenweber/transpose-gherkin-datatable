@@ -24,6 +24,8 @@ jobs:
           gradle-version: wrapper
           arguments: build
       - uses: gradle/gradle-build-action@v2
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           gradle-version: wrapper
           arguments: release
