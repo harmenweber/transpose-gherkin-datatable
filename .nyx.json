@@ -19,13 +19,13 @@
   },
   "releaseAssets": {
     "tar": {
-      "description": "tar file",
+      "description": "transpose-gherkin-datatable {{version}} tar distribution",
       "fileName": "transpose-gherkin-datatable-{{version}}.tar",
       "path": "build/distributions/transpose-gherkin-datatable-{{version}}.tar",
       "type": "application/x-tar"
     },
     "zip": {
-      "description": "zip file",
+      "description": "transpose-gherkin-datatable {{version}} zip distribution",
       "fileName": "transpose-gherkin-datatable-{{version}}.zip",
       "path": "build/distributions/transpose-gherkin-datatable-{{version}}.zip",
       "type": "application/zip"
