@@ -9,7 +9,8 @@ import kotlin.system.exitProcess
 class TransposeCommand :
     CliktCommand(help = "Reads a Gherkin data table from stdin, transposes it and prints the result to stdout.") {
 
-    val stacktrace: Boolean by option().flag().help("Prints the full stacktrace in case of an error.")
+    private val stacktrace: Boolean by option().flag()
+        .help("Prints the full stacktrace in case of an error.")
 
     override fun run() {
         try {
