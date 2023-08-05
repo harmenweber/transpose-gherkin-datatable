@@ -9,7 +9,6 @@
       }
     }
   },
-  "initialVersion": "0.1.0",
   "releaseTypes": {
     "publicationServices": [
       "github"
