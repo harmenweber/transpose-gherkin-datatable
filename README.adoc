@@ -3,13 +3,20 @@
 A simple command line tool to transpose a gherkin data table.
 The tool reads a data table from STDIN and prints the transposed data table to the STDOUT.
 
+https://kotlinlang.org[image:https://img.shields.io/badge/powered%20by-Kotlin-darkviolet[]]
+https://ajalt.github.io/clikt[image:https://img.shields.io/badge/powered%20by-Clikt-violet[]]
+https://github.com/ajalt/mordant[image:https://img.shields.io/badge/powered%20by-Mordant-red[]]
+https://github.com/mooltiverse/nyx[image:https://img.shields.io/badge/powered%20by-Nyx-blue[]]
+
+== Usage
+
 1. Clone the respository.
 2. Run `./gradlew installDist`.
 This will install a distribution to the folder `build/install/transpose-gherkin-datatable` in the repository.
 3. Pass a Gherkin data table through the STDIN to the script  `build/install/transpose-gherkin-datatable/bin/transpose-gherkin-datatable` to get the transposed data table on the STDOUT.
 4. As the full path to the script is rather cumbersome to write all the time, I suggest you create a symbolic link to the script somewhere on your PATH.
 
-.Transposing a Gherkin data table from the clipboard
+.Transposing a Gherkin data table from the clipboard on macOS
 ====
 Given you copied a Gherkin data table to the clipboard.
 Then you can transpose that data table with the following command:
@@ -19,3 +26,41 @@ Then you can transpose that data table with the following command:
 pbpaste | <repo-home>/build/install/transpose-gherkin-datatable/bin/transpose-gherkin-datatable
 ----
 ====
+
+== Background
+
+I recently needed to transpose a Gherkin data table, but ChatGPT wasn't available and I couldn't find a _Transpose Data Table_ function in my Cucumber plugin in my IDE.
+
+Later that day, I felt the urge to finally write something in Kotlin again.
+I remembered my need to transpose a Gherkin data table earlier in the day and started typing.
+
+I hacked something together.
+Pretty quick 'n' dirty.
+I didn't need it to be bulletproof.
+It just had to do the job and give me a chance to have a little Kotlin refresher.
+The result is certainly not great, completely untested and probably far from idiomatic Kotlin.
+But it was entertaining.
+I had fun.
+
+Then I remembered this gem of a library for writing CLIs in Kotlin: https://ajalt.github.io/clikt/[Clikt].
+So I added it.
+If you don't know it yet, have a look at it.
+
+Then I found out that the author of Clikt has also written https://github.com/ajalt/mordant[Mordant].
+It's a library that provides styling and widgets for command line applications.
+So I added that too.
+
+Then I thought now might be a good time to google again for a semantic release gradle plugin.
+Guess what, there is one: https://mooltiverse.github.io/nyx/[Nyx].
+Great, now I'm back to using https://www.conventionalcommits.org/[conventional commits] to automatically bump the https://semver.org[semantic version] of my project.
+
+I hear an owl hooting.
+I look out of the window.
+It was getting dark.
+Let's go to bed…
+
+Who knows what else I might add to this silly little project.
+A project that is completely unnecessary as ChatGPT is back and another Cucumber plugin for my IDE certainly provides the transpose data table feature I needed.
+But I'll remain ignorant of all this.
+This silly project has proved to be too good a playground.
+I'll keep on playing…
