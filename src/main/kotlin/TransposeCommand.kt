@@ -3,14 +3,19 @@ import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.parameters.options.flag
 import com.github.ajalt.clikt.parameters.options.help
 import com.github.ajalt.clikt.parameters.options.option
+import com.github.ajalt.clikt.parameters.options.versionOption
 import com.github.ajalt.mordant.terminal.Terminal
 import kotlin.system.exitProcess
 
-class TransposeCommand :
+class TransposeCommand(config: Config) :
     CliktCommand(help = "Reads a Gherkin data table from stdin, transposes it and prints the result to stdout.") {
 
     private val stacktrace: Boolean by option().flag()
         .help("Prints the full stacktrace in case of an error.")
+
+    init {
+        versionOption(config.version)
+    }
 
     override fun run() {
         try {

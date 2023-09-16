@@ -12,11 +12,17 @@ repositories {
 dependencies {
     implementation("com.github.ajalt.clikt:clikt:4.2.0")
     implementation("com.github.ajalt.mordant:mordant:2.1.0")
+    implementation("com.sksamuel.hoplite:hoplite-core:2.7.5")
+    implementation("com.sksamuel.hoplite:hoplite-yaml:2.7.5")
     testImplementation(kotlin("test"))
 }
 
 tasks.test {
     useJUnitPlatform()
+}
+
+tasks.processResources {
+    expand(mapOf("version" to version))
 }
 
 subprojects {
